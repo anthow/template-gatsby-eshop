@@ -39,7 +39,7 @@ const createPages = async ({ actions, graphql }) => {
       console.error(result.errors)
     }
   
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.allMarkdownRemark.edges.forEach(({ node }, index) => {
       createPage({
         path: node.fields.slug,
         component: path.resolve(
@@ -52,7 +52,9 @@ const createPages = async ({ actions, graphql }) => {
     })
   }
   
+
   module.exports = {
     onCreateNode,
     createPages
   };
+
