@@ -52,9 +52,9 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-cloudinary',
       options: {
-        cloudName: anthow,
-        apiKey: 717117224742135,
-        apiSecret: dUP42HRCq9YUnZ78mJKP7NC5cjg,
+        cloudName:"anthow",
+        apiKey: "717117224742135",
+        apiSecret: "dUP42HRCq9YUnZ78mJKP7NC5cjg",
         uploadFolder: 'template_ecommerce',
       },
     
