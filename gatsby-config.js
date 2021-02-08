@@ -52,11 +52,13 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-cloudinary',
       options: {
-        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-        apiKey: process.env.CLOUDINARY_API_KEY,
-        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        cloudName: anthow,
+        apiKey: 717117224742135,
+        apiSecret: dUP42HRCq9YUnZ78mJKP7NC5cjg,
         uploadFolder: 'template_ecommerce',
       },
+    
+      
     },
     {
       resolve: "gatsby-source-strapi",
