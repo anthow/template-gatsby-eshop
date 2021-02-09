@@ -30,8 +30,8 @@ return(
               <Image
               cloudName="anthow"
               publicId={node.frontmatter.image}
-              width="300"
-              height="210"
+              width="400"
+              height="310"
               crop="fill"
               gravity="auto"
               fetchFormat="auto"
