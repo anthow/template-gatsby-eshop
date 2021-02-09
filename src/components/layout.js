@@ -19,7 +19,7 @@ function Layout({ children }) {
   `)
   return (
     <>
-      <div className="min-h-screen flex flex-col">
+      <div className=" site min-h-screen flex flex-col">
           <Header siteTitle={data.site.siteMetadata.title} />
         {children}
         <Footer metaData={data.site.siteMetadata} />

@@ -1,13 +1,18 @@
-header{
-  margin-bottom: 50px;
+.site{
+  min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
-footer{
-  margin-top: 50px;
+header, footer{
+	padding: 1rem;
 }
 
-main.mainpage{
-  width:100%;
+
+
+main{
+  flex: 1;
+	padding: 1rem;
 }
 
 .product-list {
