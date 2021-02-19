@@ -1,6 +1,6 @@
 ---
 name: mascara
-price: 99,99
+price: "99.99"
 id: prod-5
 templateKey: product-page
 image: template_ecommerce/produit5.jpg

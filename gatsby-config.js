@@ -60,7 +60,16 @@ module.exports = {
     
       
     },
-
+    {
+      resolve:`gatsby-plugin-snipcart`,
+      options:{
+        apiKey: `MTBmZmRmZTItMzNjZS00MmI3LTg3ZjUtNTM5N2I5ODkzMjRkNjM3NDQ4NDY4NDkwMjUyMDA2`,
+        autopop:true,
+        js:'https://cdn.snipcart.com/themes/v3.0.27/default/snipcart.js',
+        jquery:false,
+        styles:'https://cdn.snipcart.com/themes/v3.0.27/default/snipcart.css'
+      }
+    },
     
   ],
 }

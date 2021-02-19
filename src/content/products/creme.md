@@ -1,6 +1,6 @@
 ---
 name: crème pour le visage
-price: 35,99
+price: "35.99"
 id: prod-4
 templateKey: product-page
 image: template_ecommerce/produit4.jpg

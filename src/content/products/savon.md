@@ -1,6 +1,6 @@
 ---
 name: savon
-price: 5,99
+price: "5.99"
 id: prod-2
 templateKey: product-page
 image: template_ecommerce/produit2.jpg

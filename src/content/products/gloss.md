@@ -1,6 +1,6 @@
 ---
 name: rouge à lèvre
-price: 12,99
+price: "15.99"
 id: prod-3
 templateKey: product-page
 image: template_ecommerce/produit3.jpg

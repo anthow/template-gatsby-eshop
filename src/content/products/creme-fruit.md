@@ -1,6 +1,6 @@
 ---
 name: crème fruit collection
-price: 44,50
+price: "44.50"
 id: prod-1
 templateKey: product-page
 image: template_ecommerce/produit1.jpg

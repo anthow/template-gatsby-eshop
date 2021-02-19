@@ -31,10 +31,17 @@ return(
       <span className="block font-semibold text-lg text-red-600">
         {data.markdownRemark.frontmatter.price} €
       </span>
-      <button className="btn btn-green mt-4">
-          ajouter au panier
+      <button
+      className=" snipcart-add-item btn btn-green mt-4"
+      data-item-id={data.markdownRemark.frontmatter.id}
+      data-item-price={data.markdownRemark.frontmatter.price}
+      data-item-url="/"
+      data-item-image={data.markdownRemark.frontmatter.image}
+      data-item-name={data.markdownRemark.frontmatter.name}
+  >
+              ajouter au panier
       </button>
-  
+      
      
     
       </div>
