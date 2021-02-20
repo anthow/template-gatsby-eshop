@@ -75,7 +75,7 @@ query($id: String) {
   }
 }`*/
 
-`query ($slug: String!)   {
+`query ($slug: String)   {
   datoCmsArticle(slug: { eq: $slug }) {
 
         slug
