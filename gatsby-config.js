@@ -20,8 +20,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
-    // pour lire fichier md comme article 
-    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {
@@ -29,26 +27,6 @@ module.exports = {
       },
     },
     
-     
-   // pour lire fichier md comme article 
-
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `content`,
-        path: `${__dirname}/src/content/`,
-      },
-
-    // pour lire les images
-    
-    },
-    /*{
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images/`,
-      },
-    },*/
     {
       resolve: 'gatsby-transformer-cloudinary',
       options: {
@@ -70,6 +48,13 @@ module.exports = {
         styles:'https://cdn.snipcart.com/themes/v3.0.27/default/snipcart.css'
       }
     },
-    
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: `31646adcfc6858a0cbc4667fd6329f`,
+        preview: false,
+        disableLiveReload: false,
+      },
+    },
   ],
 }

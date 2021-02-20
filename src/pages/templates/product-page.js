@@ -8,7 +8,7 @@ return(
     <>   <div className="flex flex-col md:flex-row content-center m-auto w-2/3" >
 <Image
               cloudName="anthow"
-              publicId={data.markdownRemark.frontmatter.image}
+              publicId={data.datoCmsArticle.photo.url}
               width="300"
               height="300"
               crop="fill"
@@ -25,19 +25,19 @@ return(
       </Link>
       
       <h1 className="font-bold text-3xl text-black-800 mt-8 mb-2">
-        {data.markdownRemark.frontmatter.name}
+        {data.datoCmsArticle.nom}
       </h1>
      
       <span className="block font-semibold text-lg text-red-600">
-        {data.markdownRemark.frontmatter.price} €
+        {data.datoCmsArticle.prix} €
       </span>
       <button
       className=" snipcart-add-item btn btn-green mt-4"
-      data-item-id={data.markdownRemark.frontmatter.id}
-      data-item-price={data.markdownRemark.frontmatter.price}
+      data-item-id={data.datoCmsArticle.id}
+      data-item-price={data.datoCmsArticle.prix}
       data-item-url="/"
-      data-item-image={data.markdownRemark.frontmatter.image}
-      data-item-name={data.markdownRemark.frontmatter.name}
+      data-item-image={data.datoCmsArticle.photo.url}
+      data-item-name={data.datoCmsArticle.nom}
   >
               ajouter au panier
       </button>
@@ -45,19 +45,21 @@ return(
      
     
       </div>
-      
-      
-    
       </div>
+    
       <div className=" markdown mt-4 w-2/3  m-auto border-2t p-8"
-      dangerouslySetInnerHTML={{__html:data.markdownRemark.html}}>
+      >
+        <h2>Description du produit</h2>
+        <p>{data.datoCmsArticle.descriptionDuProduit}</p>
+        <h2>traçabilité</h2>
+        <p>{data.datoCmsArticle.tracabilit}</p>
          </div>
    </>
    
 )
 }
 
-export const pageQuery =graphql `
+export const pageQuery =graphql /*`
 query($id: String) {
   markdownRemark(id: { eq: $id }) {
     html
@@ -71,4 +73,23 @@ query($id: String) {
       slug
     }
   }
-}`
+}`*/
+
+`query ($slug: String!)   {
+  datoCmsArticle(slug: { eq: $slug }) {
+
+        slug
+        id
+        descriptionDuProduit
+        nom
+        prix
+        tracabilit
+        photo {
+          width
+          url
+        }
+      }
+
+
+}
+`

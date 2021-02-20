@@ -6,7 +6,7 @@ import Seo from '../components/seo'
 
 
 const ProductsPage = ({ data }) => {
-  const products = data.allMarkdownRemark.edges
+  const products = data.allDatoCmsArticle.edges
 return(
   <Content>
   <Seo title='boutique' />
@@ -22,14 +22,14 @@ return(
       {products.map(({ node }) => {
         return (
             <Link
-            key={node.fields.slug}
-            to={node.fields.slug}
+            key={node.slug}
+            to={node.slug}
             className="block rounded-lg shadow hover:shadow-2xl"
           >
             <div className="relative pb-full">
               <Image
               cloudName="anthow"
-              publicId={node.frontmatter.image}
+              publicId={node.photo.url}
               width="400"
               height="310"
               crop="fill"
@@ -44,13 +44,13 @@ return(
             <div className="bg-white p-4">
             
               <div className="font-bold text-2xl">
-                {node.frontmatter.name}
+                {node.nom}
               </div>
               <div className="font-semibold text-l">
-                {node.frontmatter.price} €
+                {node.prix} €
               </div>
               <div className="font-semibold text-l">
-                {node.frontmatter.categorie} 
+catégorie
               </div>
             </div>
             
@@ -66,23 +66,24 @@ return(
 export default ProductsPage
 
 export const pageQuery = graphql`
-query MyQuery {
-    allMarkdownRemark {
+query ProductsQuery {
+    allDatoCmsArticle {
       edges {
         node {
-            fields{
-                slug
-            }
-          frontmatter {
-            name
-            id
-            price
-            image
-            categorie
+          slug
+          id
+          descriptionDuProduit
+          nom
+          prix
+          tracabilit
+          photo {
+            width
+            url
           }
         }
       }
     }
+  
   }
   
 `
