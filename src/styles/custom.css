@@ -1,3 +1,8 @@
+body{
+  font-family: roboto;
+  color:#707070;
+}
+
 .site{
   min-height: 100vh;
 	display: flex;
@@ -6,13 +11,35 @@
 
 header, footer{
 	padding: 1rem;
+  background-color: #82B657;
 }
 
+.concept-boutique{
+background-color:#EEE4E4;
+border-top: solid 7px #EDB720;
+}
 
+.concept-atelier{
+  background-color:#E0D7D7;
+  border-top: solid 7px #168992;
 
+}
 main{
   flex: 1;
-	padding: 1rem;
+}
+
+button.boutique{
+  background-color:#EDB720;
+  width: 100px;
+}
+button.atelier{
+  background-color:#168992;
+  width: 100px;
+}
+
+button.valeur{
+  background-color:#82B657;
+  width: 120px;
 }
 
 .product-list {
@@ -25,7 +52,16 @@ main{
     grid-gap: theme('spacing.20')
   }
 
+h2, h3{
+  font-family: DancingScript;
+  color:#4A0D17;
+}
 
+
+img.valeur{
+  width:150px;
+  height:150px;
+}
   
 
   @screen sm {

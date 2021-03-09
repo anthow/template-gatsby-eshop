@@ -1,130 +1,157 @@
 import React from "react"
-import Seo from '../components/seo'
-import { graphql } from "gatsby"
-import {Image} from "cloudinary-react"
+import Seo from "../components/seo"
+//import { graphql, Link } from "gatsby"
 
-const IndexPage = ({ data }) => {
-
+const IndexPage = data => {
   return (
     <>
-      <Seo title='accueil' />
-    <main className="lg">
-      <div className="head">
-      <h1 className="font-bold text-2xl text-center">
-        {data.datoCmsAccueil.titreDeLaPage}    </h1>
-      <h2 className="font-bold text-xl text-center">
-      {data.datoCmsAccueil.titreHeader} 
-        </h2>
-      <p className="p-5 text-center">
-      {data.datoCmsAccueil.texteHeader} 
+      <Seo title="accueil" />
+      <main className="max-w-screen-2xl">
+        <div className="head w-10/12   m-auto md:max-w-screen-lg">
+          <img className="mb-10 block w-4/6 m-auto" src="accueil.svg" />
+          <h2 className=" text-4xl text-left mb-5">Notre concept</h2>
+          <p className=" text-left mb-5">
+            Aenean maximus lorem vitae auctor ullamcorper. Aliquam cursus
+            fermentum rhoncus. Aenean interdum n risus a iaculis. In placerat
+            dolor purus, nec suscipit est iaculis at. Pellentesque nec nisl
+            risus. Nullam quis felis vel urna viverra mollis ac nec felis. In
+            scelerisque ante non vehicula auctor.
+          </p>
+          <p className="text-left mb-10">
+            Aenean maximus lorem vitae auctor ullamcorper. Aliquam cursus
+            fermentum rhoncus. Aenean interdum n risus a iaculis. In placerat
+            dolor purus, nec suscipit est iaculis at. Pellentesque nec nisl
+            risus. Nullam quis felis vel urna viverra mollis ac nec felis. In
+            scelerisque ante non vehicula auctor.
+          </p>
+        </div>
+        <div className="content">
+          <section className="flex justify-center mb-10 max-w-max  flex-wrap">
+            <article className=" md:w-1/2 md: mb-0 m-auto w-12/12 mb-3">
+              <div className="concept-boutique  p-10  mb-5">
+                <h3 className="font-bold text-2xl text-left mb-5"> boutique</h3>
+                <p className="p-2 text-left mb-3">
+                  Aenean maximus lorem vitae auctor ullamcorper. Aliquam cursus
+                  fermentum rhoncus. Aenean interdum in risus a iaculis. In
+                  placerat dolor purus, nec suscipit est iaculis at.
+                  Pellentesque nec nisl risus. Nullam quis felis vel urna
+                  viverra mollis ac nec felis. In scelerisque ante non vehicula
+                  auctor.{" "}
+                </p>
+              </div>
+              <button
+                className="  block m-auto p-2  w-auto  text-center boutique rounded-xl text-white "
+                name="button"
+                type="button"
+              >
+                Boutique
+              </button>
+            </article>
+            <article className=" md:w-1/2 md: mb-0 m-auto w-12/12 mb-3">
+              <div className="concept-atelier p-10  mb-5">
+                <h3 className="font-bold text-2xl text-left mb-5">
+                  {" "}
+                  Ateliers/formations{" "}
+                </h3>
+                <p className="p-2 text-left mb-3">
+                  Aenean maximus lorem vitae auctor ullamcorper. Aliquam cursus
+                  fermentum rhoncus. Aenean interdum in risus a iaculis. In
+                  placerat dolor purus, nec suscipit est iaculis at.
+                  Pellentesque nec nisl risus. Nullam quis felis vel urna
+                  viverra mollis ac nec felis. In scelerisque ante non vehicula
+                  auctor.{" "}
+                </p>
+              </div>
+              <button
+                className="   block m-auto p-2  w-auto  text-center atelier rounded-xl text-white w-16"
+                name="button"
+                type="button"
+              >
+                Ateliers
+              </button>
+            </article>
+          </section>
 
-      </p>
-     
-      </div>
-      <div className='content'>
-<section className="flex justify-center mb-10 items-start flex-wrap">
-<article className=" md:w-1/3 md: mb-0 m-auto w-10/12 mb-3 items-start">
-<Image
-              cloudName="anthow"
-              publicId={data.datoCmsAccueil.imageConcept1.url}
-              width="200"
-              height="200"
-              crop="fill"
-              gravity="auto"
-              fetchFormat="auto"
-              quality="auto"
-              secure="true"
-              className=" mb-3 block m-auto"
-              ></Image>
-<h3 className="font-bold text-1xl text-center"> {data.datoCmsAccueil.titreConcept1} </h3>
-<p className="p-2 text-center mb-3">
-{data.datoCmsAccueil.paragrapheConcept1}
-   </p>
-<button className="  block m-auto p-2  w-auto bg-yellow-300 text-center" name="button" type="button">Click Here</button>  
-  </article> 
-  <article className=" md:w-1/3 m-auto w-10/12 items-start" >
-  <Image
-              cloudName="anthow"
-              publicId={data.datoCmsAccueil.imageConcept2.url}
-              width="200"
-              height="200"
-              crop="fill"
-              gravity="auto"
-              fetchFormat="auto"
-              quality="auto"
-              secure="true"
-              className=" mb-3 block m-auto"
-              ></Image>
-    <h3  className="font-bold text-1xl text-center"> Ateliers/formations  </h3>
-<p className="p-2 text-center mb-3">Aenean maximus lorem vitae auctor ullamcorper. 
-Aliquam cursus fermentum rhoncus. Aenean interdum 
-in risus a iaculis. In placerat dolor purus, nec suscipit 
-est iaculis at. Pellentesque nec nisl risus. Nullam quis 
-felis vel urna viverra mollis ac nec felis. In scelerisque 
-ante non vehicula auctor. </p>
-<button className="  block m-auto p-2 w-auto bg-yellow-300 text-center" name="button" type="button">Click Here</button>  
-  </article>
-</section>
+          <h2 className=" text-4xl text-center mb-10">nos valeurs</h2>
+          <section className="flex justify-center flex-wrap mb-20">
+            <article className="md:w-1/4 md: mb-0 m-auto w-10/12 mb-3">
+              <img
+                className="mb-3 block m-auto valeur rounded-full"
+                src="valeur-un.jpg"
+              />
+              <h3 className="font-bold text-2xl mb-5 text-center">
+                {" "}
+                lorem ipsum{" "}
+              </h3>
+              <p className="p-2 text-center mb-3">
+                Aenean maximus lorem vitae auctor ullamcorper. Aliquam cursus
+                fermentum rhoncus. Aenean interdum in risus a iaculis. In
+                placerat dolor purus, nec suscipit est iaculis at. Pellentesque
+                nec nisl risus. Nullam quis felis vel urna viverra mollis ac nec
+                felis. In scelerisque ante non vehicula auctor.{" "}
+              </p>
+              <button
+                className="   block m-auto p-2  w-auto  text-center valeur rounded-xl text-white w-16"
+                name="button"
+                type="button"
+              >
+                                En savoir plus
 
-<h2 className="font-bold mb-5 text-xl text-center">
-    nos valeurs
-  </h2>
-  <section className="flex justify-center flex-wrap">
-  <article className="md:w-1/4 md: mb-0 m-auto w-10/12 mb-3">
-  <img  className="mb-3 block m-auto" src="https://fakeimg.pl/150/"/>
-  <h3 className="font-bold text-1xl text-center"> lorem ipsum  </h3>
-  <p className="p-2 text-center mb-3">Aenean maximus lorem vitae auctor ullamcorper. 
-Aliquam cursus fermentum rhoncus. Aenean interdum 
-in risus a iaculis. In placerat dolor purus, nec suscipit 
-est iaculis at. Pellentesque nec nisl risus. Nullam quis 
-felis vel urna viverra mollis ac nec felis. In scelerisque 
-ante non vehicula auctor. </p>
-  </article>
-  <article className="md:w-1/4 md: mb-0 m-auto w-10/12 mb-3">
-  <img  className="mb-3 block m-auto" src="https://fakeimg.pl/150/"/>
-  <h3 className="font-bold text-1xl text-center"> lorem ipsum  </h3>
-  <p className="p-2 text-center mb-3">Aenean maximus lorem vitae auctor ullamcorper. 
-Aliquam cursus fermentum rhoncus. Aenean interdum 
-in risus a iaculis. In placerat dolor purus, nec suscipit 
-est iaculis at. Pellentesque nec nisl risus. Nullam quis 
-felis vel urna viverra mollis ac nec felis. In scelerisque 
-ante non vehicula auctor. </p>
-  </article>
-  <article className="md:w-1/4 md: mb-0 m-auto w-10/12 mb-3">
-  <img  className="mb-3 block m-auto" src="https://fakeimg.pl/150/"/>
-  <h3 className="font-bold text-1xl text-center"> lorem ipsum  </h3>
-  <p className="p-2 text-center mb-3">Aenean maximus lorem vitae auctor ullamcorper. 
-Aliquam cursus fermentum rhoncus. Aenean interdum 
-in risus a iaculis. In placerat dolor purus, nec suscipit 
-est iaculis at. Pellentesque nec nisl risus. Nullam quis 
-felis vel urna viverra mollis ac nec felis. In scelerisque 
-ante non vehicula auctor. </p>
-  </article>
-</section>
-      </div>
+              </button>
+            </article>
+            <article className="md:w-1/4 md: mb-0 m-auto w-10/12 mb-3">
+              <img
+                className="mb-3 block m-auto valeur rounded-full"
+                src="valeur-deux.jpg"
+              />
+              <h3 className="font-bold text-2xl mb-5 text-center">
+                {" "}
+                lorem ipsum{" "}
+              </h3>
+              <p className="p-2 text-center mb-3">
+                Aenean maximus lorem vitae auctor ullamcorper. Aliquam cursus
+                fermentum rhoncus. Aenean interdum in risus a iaculis. In
+                placerat dolor purus, nec suscipit est iaculis at. Pellentesque
+                nec nisl risus. Nullam quis felis vel urna viverra mollis ac nec
+                felis. In scelerisque ante non vehicula auctor.{" "}
+              </p>
+              <button
+                className="   block m-auto p-2  w-auto  text-center valeur rounded-xl text-white w-16"
+                name="button"
+                type="button"
+              >
+                                En savoir plus
+
+              </button>
+            </article>
+            <article className="md:w-1/4 md: mb-0 m-auto w-10/12 mb-3">
+              <img
+                className="mb-3 block m-auto valeur rounded-full"
+                src="valeur-trois.jpg"
+              />
+              <h3 className="font-bold text-2xl mb-5 text-center">
+                {" "}
+                lorem ipsum{" "}
+              </h3>
+              <p className="p-2 text-center mb-3">
+                Aenean maximus lorem vitae auctor ullamcorper. Aliquam cursus
+                fermentum rhoncus. Aenean interdum in risus a iaculis. In
+                placerat dolor purus, nec suscipit est iaculis at. Pellentesque
+                nec nisl risus. Nullam quis felis vel urna viverra mollis ac nec
+                felis. In scelerisque ante non vehicula auctor.{" "}
+              </p>
+              <button
+                className="   block m-auto p-2  w-auto  text-center valeur rounded-xl text-white w-16"
+                name="button"
+                type="button"
+              >
+                En savoir plus
+              </button>
+            </article>
+          </section>
+        </div>
       </main>
     </>
   )
 }
 export default IndexPage
-
-export const pageQuery = graphql`
-query Index {
-  datoCmsAccueil {
-   
-        titreDeLaPage
-        titreHeader
-        texteHeader
-        imageConcept1 {
-          url
-        }
-        titreConcept1
-        paragrapheConcept1
-        imageConcept2 {
-          url
-        }
-        titreConcept2
-        paragrapheConcept2
-  }
-}  
-`

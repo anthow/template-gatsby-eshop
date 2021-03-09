@@ -35,7 +35,7 @@ return(
       className=" snipcart-add-item btn btn-green mt-4"
       data-item-id={data.datoCmsArticle.id}
       data-item-price={data.datoCmsArticle.prix}
-      data-item-url="/"
+      data-item-url={"/"}
       data-item-image={data.datoCmsArticle.photo.url}
       data-item-name={data.datoCmsArticle.nom}
   >
@@ -75,8 +75,8 @@ query($id: String) {
   }
 }`*/
 
-`query ($slug: String)   {
-  datoCmsArticle(slug: { eq: $slug }) {
+`query ($id: String)   {
+  datoCmsArticle(id: { eq: $id }) {
 
         slug
         id
